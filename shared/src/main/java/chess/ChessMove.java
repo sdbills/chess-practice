@@ -53,6 +53,10 @@ public class ChessMove {
         return promotionPiece;
     }
 
+    public boolean isValidMove() {
+        return !endPosition.equals(startPosition) && startPosition.isValid() && endPosition.isValid();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) {
