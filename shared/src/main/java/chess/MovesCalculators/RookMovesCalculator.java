@@ -6,7 +6,7 @@ import chess.ChessPosition;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+
 
 public class RookMovesCalculator extends PiecesMovesCalculator{
     @Override
