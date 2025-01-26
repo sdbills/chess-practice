@@ -11,7 +11,7 @@ import java.util.List;
 public class RookMovesCalculator extends PiecesMovesCalculator{
     @Override
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition position) {
-        var newMoves = new ArrayList<ChessMove>();
+        var moves = new ArrayList<ChessMove>();
         int[] directions = {-1,1};
         for (var n : directions) {
             for (var m : directions) {
@@ -25,13 +25,13 @@ public class RookMovesCalculator extends PiecesMovesCalculator{
                     }
                     var newMove = createLegalMove(board,position,newPosition);
                     if (newMove != null) {
-                        newMoves.add(newMove);
+                        moves.add(newMove);
                     }
                     i++;
                 } while (newPosition.isValid() && board.getPiece(newPosition) == null);
             }
         }
 
-        return newMoves;
+        return moves;
     }
 }
